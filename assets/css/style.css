@@ -521,6 +521,21 @@ th {
 }
 /* ! section-5 */
 
+/* section 6 */
+
+.section-6{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.section-6 h1{
+  color: #3a73c9;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+/* !section-6 */
+
 /* footer */
 
 .footer {
@@ -1064,3 +1079,11 @@ th {
     text-align: center;
   }
 }
+
+@media (max-width: 484px) {
+  .banner-section-image img{
+    width: 300px;
+  }
+}
+
+
