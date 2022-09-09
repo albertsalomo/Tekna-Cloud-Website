@@ -1,3 +1,10 @@
+<?php 
+    include ('testadmin/dbConfig.php');               
+    
+    $sql = "SELECT * FROM buku";
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,6 +27,7 @@
  <!-- header start -->
  <header class="header">
     <div class="container">
+
         <div class="row v-center">
             <div class="header-item item-left">
                 <div class="logo">
@@ -56,25 +64,33 @@
 <!-- header end -->
 
 <!-- banner start -->
+<?php
+    $sql_banner = $sql." WHERE id=26 ";                 
+    $result = $conn->query($sql_banner);
+
+    while($row = $result->fetch_assoc()) {
+?>
 <section class="banner-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-5">
                 <div class="banner-section-image">
-                    <img src="images/Cloud-Banner.png"/>
+                    <img src="testadmin/images/<?= $row['image']; ?>"/>
                 </div>
             </div>
             <div class="col-lg-7 desc">
                 <div class="row">
                     <div class="banner-section-description">
-                        Tekna Cloud is a Premium<br>
-                        Cloud Technology
+                        <?php 
+                            echo $row['judul'];
+                        ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="banner-section-sub-description">
-                        Tekna Cloud is a specialist IaaS provider catering for enterprise and government. We specialise in designing, delivering and supporting cloud infrastructure and networks for clients with mission critical applications 
-and requirements.
+                        <?php 
+                            echo $row['tahun'];
+                        ?>
                     </div>
                 </div>
                 <div class="row">
@@ -87,6 +103,10 @@ and requirements.
         </div>
     </div>
 </section>
+<?php 
+}
+$conn->close();
+?>
 <!-- banner end -->
 
 <div class="line-section">

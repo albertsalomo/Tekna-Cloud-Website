@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="row mt-3" style="text-align:center;">
                                     <h5>Content</h5>
-                                    <input type="number" name="year" id="year" class="form-control">
+                                    <input type="text" name="year" id="year" class="form-control">
                                 </div>
                             </form>
                         </div>

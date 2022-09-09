@@ -25,7 +25,7 @@ function uploadImage($image, $dir)
         return $result;
     }
 
-    if ($size > 1048576) {
+    if ($size > 3048576) {
         alert('Ukuran gambar maksimal 1MB!');
         return $result;
     }
