@@ -5,7 +5,7 @@
     $counter = 0;
     include('framework/html_head.php');
     include('dbConfig.php');
-    $result = $conn->query("SELECT id, judul, tahun, image FROM buku");
+    $result = $conn->query("SELECT id, title, content, image FROM tb_content");
     ?>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <title>MySQL Website</title>
@@ -31,13 +31,13 @@
             }
         } else {
         ?>
-            <h1>Books List</h1>
+            <h1>Contents List</h1>
             <hr>
             <td>
                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#addModal" id="btnNew">
                     <i class="fas fa-plus"></i>
                     <i class="fas fa-user"></i>
-                    Add book
+                    Add Content
                 </button>
             </td><br><br>
 
@@ -56,7 +56,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form method="POST" id="formAddBook" enctype="multipart/form-data" class="container">
+                            <form method="POST" id="formAddContent" enctype="multipart/form-data" class="container">
                                 <div class="row">
                                     <div class="col-lg-12" style="text-align:center;">
                                         <img id="output" src="images/book.png" width="200" height="200" style="border: none;" />
@@ -66,7 +66,7 @@
                                 <div class="row mt-3" style="text-align:center;">
                                     <h5>Change Picture</h5>
                                     <div class="col-lg-12">
-                                        <input type="file" name="image" id="bookImage" class="form-control">
+                                        <input type="file" name="image" id="contentImage" class="form-control">
                                     </div>
                                 </div>
                                 <script src="framework/image.js"></script>
@@ -76,7 +76,7 @@
                                 </div>
                                 <div class="row mt-3" style="text-align:center;">
                                     <h5>Content</h5>
-                                    <input type="text" name="year" id="year" class="form-control">
+                                    <input type="text" name="content" id="content" class="form-control">
                                 </div>
                             </form>
                         </div>
@@ -90,7 +90,7 @@
             <table class="table table-dark table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col">Content ID</th>
                         <th scope="col">Title</th>
                         <th scope="col">Content</th>
                         <th scope="col">Image</th>
@@ -103,7 +103,7 @@
             </table>
         <?php } ?>
     </div>
-    <script src="buku.js"></script>
+    <script src="content.js"></script>
 </body>
 
 </html>

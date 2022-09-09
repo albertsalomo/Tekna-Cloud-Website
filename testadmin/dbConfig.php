@@ -2,7 +2,7 @@
     $servername = "localhost";
     $username = "root";
     $password = "";
-    $database = "perpustakaan";
+    $database = "teknacloud";
     // Create connection
     $conn = new mysqli($servername, $username, $password, $database);
     // Check connection

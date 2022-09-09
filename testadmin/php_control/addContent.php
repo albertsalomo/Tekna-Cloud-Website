@@ -2,12 +2,12 @@
 require('../dbConfig.php');
 require('functions.php');
 
-$judul = $_POST['title'];
-$tahun = $_POST['year'];
+$title = $_POST['title'];
+$content = $_POST['content'];
 $image = 'temp.jpg';
 
-if ($judul === '' || $tahun === '') {
-    alert('Title and year cannot be empty !');
+if ($title === '' || $content === '') {
+    alert('Title and Content cannot be empty!');
     refresh();
     return;
 }
@@ -23,8 +23,8 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] !== 4) {
 }
 
 // insert
-$qryInsertBuku = "INSERT INTO buku VALUES ('', '$judul', '$tahun','$image')";
-if ($conn->query($qryInsertBuku)) {
+$qryInsertContent = "INSERT INTO tb_content VALUES ('', '$title', '$content','$image')";
+if ($conn->query($qryInsertContent)) {
     echo true;
 } else {
     echo $conn->error;

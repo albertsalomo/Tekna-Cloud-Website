@@ -5,13 +5,13 @@ require('../php_control/functions.php');
 
 $send = [];
 
-$judul = $_POST['title'];
-$tahun = $_POST['year'];
+$title = $_POST['title'];
+$content = $_POST['content'];
 $image = '';
-$bookId = $_POST['tempId'];
+$contentId = $_POST['tempId'];
 
-if ($judul === '' || $tahun === '') {
-    alert('Title and year cannot be empty !');
+if ($title === '' || $content === '') {
+    alert('Title and Content cannot be empty !');
     refresh();
     return;
 }
@@ -28,13 +28,13 @@ if (isset($_FILES['image']) && $_FILES['image']['error'] !== 4) {
 // UPDATE
 
 if($image == ''){
-    $qryUpdateBuku = "UPDATE buku SET judul='$judul', tahun = '$tahun' WHERE id = '$bookId'";
+    $qryUpdateContent = "UPDATE tb_content SET title='$title', content = '$content' WHERE id = '$contentId'";
 }
 else{
-    $qryUpdateBuku = "UPDATE buku SET judul='$judul', tahun = '$tahun', image = '$image' WHERE id = '$bookId'";
+    $qryUpdateContent = "UPDATE tb_content SET title='$title', content = '$content', image = '$image' WHERE id = '$contentId'";
 }
 
-if ($conn->query($qryUpdateBuku)) {
+if ($conn->query($qryUpdateContent)) {
     echo true;
 } else {
     echo $conn->error;

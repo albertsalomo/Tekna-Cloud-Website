@@ -1,7 +1,7 @@
 <?php 
     include ('testadmin/dbConfig.php');               
     
-    $sql = "SELECT * FROM buku";
+    $sql = "SELECT * FROM tb_content";
 ?>
 
 
@@ -82,14 +82,15 @@
                 <div class="row">
                     <div class="banner-section-description">
                         <?php 
-                            echo $row['judul'];
+                            echo $row['title'];
                         ?>
                     </div>
                 </div>
                 <div class="row">
                     <div class="banner-section-sub-description">
                         <?php 
-                            echo $row['tahun'];
+                            echo $row['content'];
+                        }
                         ?>
                     </div>
                 </div>
@@ -103,10 +104,6 @@
         </div>
     </div>
 </section>
-<?php 
-}
-$conn->close();
-?>
 <!-- banner end -->
 
 <div class="line-section">
@@ -117,14 +114,26 @@ $conn->close();
     </div>
 </div>
 
+<?php
+    $sql_section1 = $sql." WHERE id=35";                 
+    $result = $conn->query($sql_section1);
+
+    while($row = $result->fetch_assoc()) {
+?>
 <section class="section-1">
     <div class="container">
         <div class="row">
             <div class="col-lg-9">
-                <h3>What is TeknaCloud ?</h3>
+                <h3>
+                    <?php 
+                        echo $row['title'];
+                    ?>
+                </h3>
                 <p>
-                    Tekna Cloud is an Privat Company owned Infrastructure as a Service (IaaS) provider with a clear mission to provide the most performant, secure, and reliable cloud infrastructure in the world. 
-                    We operate one of the world's most diverse networks with a presence in 24 datacentres across 10 countries and are the preferred choice for enterprises and government agencies looking to host mission critical applications
+                    <?php
+                        echo $row['content'];
+                    }
+                    ?>
                 </p>
             </div>
         </div>
@@ -140,32 +149,66 @@ $conn->close();
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1>Why Tekna ?</h1>
+                <h1>Why Tekna?</h1>
             </div>
         </div>
         <div class="row section-4-item-card">
+            
+            <?php
+                $sql_why1 = $sql." WHERE id=36";                 
+                $result = $conn->query($sql_why1);
+
+                while($row = $result->fetch_assoc()) {
+            ?>
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
                         <i class="fas fa-check"></i>
-                        <h5 class="card-title">Performance, Security, Reliability and Affordable</h5>
-                    </div>
-                    </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <i class="fas fa-coins"></i>
-                        <h5 class="card-title">Relationships Built on top of Meaningful SLA's and Support 24/7
+                        <h5 class="card-title">
+                            <?php 
+                                echo $row['content'];
+                                }
+                            ?>
                         </h5>
                     </div>
                     </div>
             </div>
+
+            <?php
+                $sql_why2 = $sql." WHERE id=37";                 
+                $result = $conn->query($sql_why2);
+
+                while($row = $result->fetch_assoc()) {
+            ?>
+            <div class="col-lg-4">
+                <div class="card">
+                    <div class="card-body">
+                        <i class="fas fa-coins"></i>
+                        <h5 class="card-title">
+                        <?php 
+                            echo $row['content'];
+                            }   
+                        ?>
+                        </h5>
+                    </div>
+                    </div>
+            </div>
+
+            <?php
+                $sql_why3 = $sql." WHERE id=38";                 
+                $result = $conn->query($sql_why3);
+
+                while($row = $result->fetch_assoc()) {
+            ?>
             <div class="col-lg-4">
                 <div class="card">
                     <div class="card-body">
                         <i class="fas fa-award" style="padding-left: 14px; padding-right: 14px"></i>
-                        <h5 class="card-title">Data sovereignty & Transparent Billing Model
+                        <h5 class="card-title">
+                            <?php 
+                                echo $row['content'];
+                                }
+                            ?>
                         </h5>
                     </div>
                     </div>
@@ -176,28 +219,48 @@ $conn->close();
 <section class="section-1"></section>
 </section>
 
+<?php
+    $sql_footer = $sql." WHERE id=31";                 
+    $result = $conn->query($sql_footer);
 
+    while($row = $result->fetch_assoc()) {
+?>
 <footer class="footer">
     <div class="container">
         <div class="row">
                 <div class="content-title">
-                    <h4>PT TEKNA DIGITAL INFORMATIKA </h4>
-                    <p>Alamat: Patra Jasa Office Tower Lt 17 Room 1703
-                        Jl. Jend. Gatot Subroto Kav 32- 34 Rt 001 Rw 003 Kel. Kuningan Timur
-                        Kec. Setia Budi Jakarta  12950</p>
-                    <p>Telp: +62-21-52900252</p>
-                    <p>Fax : +62-21 52900253</p>
-                    <p>WhatsApp: +62-85220022884</p>
-                    <p>email: support@teknacloud.id</p>
+                    <h4>
+                        <?php 
+                            echo $row['title'];        
+                        ?>
+                    </h4>
+                    <p>
+                        <?php 
+                        echo $row['content'];
+                        ?>
+                    </p>
                 </div>
         </div>
     </div>
 </footer>
 
+<?php
+    $sql_cr1 = $sql." WHERE id=39";                 
+    $result = $conn->query($sql_cr1);
+
+    while($row = $result->fetch_assoc()) {
+?>
 <div class="copyright">
-    Copyright © 2022 Tekna Cloud | All Rights Reserved
+    <?php 
+        echo $row['content'];
+    }
+    ?>
 </div>
 
 <script src="assets/js/script.js"></script>
+<?php 
+}
+$conn->close();
+?>
 </body>
 </html>
