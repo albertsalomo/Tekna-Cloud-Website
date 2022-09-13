@@ -114,6 +114,21 @@
     </div>
 </div>
 
+<!-- Carousel -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="images/temp.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/temp2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="images/temp3.jpg" class="d-block w-100" alt="...">
+    </div>
+  </div>
+</div>
+
 <?php
     $sql_section1 = $sql." WHERE id=35";                 
     $result = $conn->query($sql_section1);
