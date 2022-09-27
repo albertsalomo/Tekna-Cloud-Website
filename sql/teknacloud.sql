@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 09, 2022 at 10:47 AM
+-- Generation Time: Sep 22, 2022 at 05:37 PM
 -- Server version: 10.4.24-MariaDB
 -- PHP Version: 8.0.19
 
@@ -47,6 +47,27 @@ INSERT INTO `tb_content` (`id`, `title`, `content`, `image`) VALUES
 (38, 'Why 3', 'Data sovereignty & Transparent Billing Model', 'temp.jpg'),
 (39, 'Copyright', 'Copyright © 2022 Tekna Cloud | All Rights Reserved', 'temp.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tb_user`
+--
+
+CREATE TABLE `tb_user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `tb_user`
+--
+
+INSERT INTO `tb_user` (`id`, `name`, `email`, `password`) VALUES
+(1, 'admin', 'admin@gmail.com', 'admin'),
+(2, 'admin2', 'admin2@gmail.com', 'admin');
+
 --
 -- Indexes for dumped tables
 --
@@ -58,6 +79,12 @@ ALTER TABLE `tb_content`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -65,7 +92,13 @@ ALTER TABLE `tb_content`
 -- AUTO_INCREMENT for table `tb_content`
 --
 ALTER TABLE `tb_content`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=40;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=43;
+
+--
+-- AUTO_INCREMENT for table `tb_user`
+--
+ALTER TABLE `tb_user`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
