@@ -22,7 +22,6 @@ $sql = "SELECT * FROM tb_content";
     <!-- Javascript -->
     <script src="bootstrap/js/bootstrap.js"></script>
 
-
     <title>Tekna Website</title>
 
 <body>
@@ -49,6 +48,8 @@ $sql = "SELECT * FROM tb_content";
                         <ul class="menu-main">
                             <li>
                                 <a href="http://portal.teknacloud.id" type="button" class="btn btn-info" role="button">Login</a>
+                                <!-- <a href="login.php" type="button" class="btn btn-info" role="button">Login</a> -->
+                                <!-- <a href="logout.php" type="button" class="btn btn-info" role="button">Logout</a> -->
                             </li>
                         </ul>
                     </nav>
