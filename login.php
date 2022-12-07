@@ -24,6 +24,7 @@ if(isset($_POST['submit'])){
     } else {
         echo "<script>alert('Login Failed')</script>";
     }
+
 }
 ?>
 
@@ -81,13 +82,13 @@ if(isset($_POST['submit'])){
                             <div class="input-group mb-4">
                                 <label for="input" class="w-100">
                                     <span class="input-title">Email</span>
-                                    <input type="text" name="email" class="form-control mt-2" placeholder="Email@example.org" value="<?php echo $email ?>" required>
+                                    <input type="text" name="email" class="form-control mt-2" placeholder="Email@example.org" value="<?php echo $email ?>">
                                 </label>
                             </div>
                             <div class="input-group mb-4">
                                 <label for="input" class="w-100">
                                     <span class="input-title">Password</span>
-                                    <input type="password" name="password" class="form-control mt-2" placeholder="Your Password" value="<?php echo $_POST['password']; ?>" required>
+                                    <input type="password" name="password" class="form-control mt-2" placeholder="Your Password" value="<?php echo $_POST['password']; ?>">
                                 </label>
                             </div>
                             <button class="btn btn-card" name="submit">Login</button>
